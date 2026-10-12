@@ -15,7 +15,7 @@ async function bootstrap() {
   //     'https://quickstart-25b84c4b.myshopify.com', // 店铺默认域名
   //   ],
   //   methods: ['GET', 'POST', 'OPTIONS'],
-  //   allowedHeaders: ['Content-Type'],
+  //   allowedHeaders: ['Content-Type'],s
   // });
   app.setGlobalPrefix('api');
   await app.listen(process.env.PORT ?? 3000);
