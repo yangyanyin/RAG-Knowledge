@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "build": "nest build",
-    "deploy": "wrangler deploy",
+    "deploy": "nest deploy",
     "dev:cf": "wrangler dev",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
