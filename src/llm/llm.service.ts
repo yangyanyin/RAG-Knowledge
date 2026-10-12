@@ -1,6 +1,10 @@
 import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
-import OpenAI from 'openai'
+// import OpenAI from 'openai'
+// import type OpenAI from 'openai';
+import { OpenAI } from 'openai'; 
+
+
 
 @Injectable()
 export class LlmService {
