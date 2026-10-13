@@ -1,9 +1,12 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule, ObserveInstrument } from './app.module.js';
+import { existsSync } from 'node:fs';
 
 
 // 加载 .env 里的环境变量（Node 内置能力，不用额外装包）
-process.loadEnvFile();
+if (existsSync('.env')) {
+  process.loadEnvFile();
+}
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
