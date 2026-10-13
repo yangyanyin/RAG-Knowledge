@@ -7,6 +7,7 @@ import { existsSync } from 'node:fs';
 if (existsSync('.env')) {
   process.loadEnvFile();
 }
+console.log('test 111')
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
