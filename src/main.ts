@@ -14,7 +14,9 @@ async function bootstrap() {
     instrument: ObserveInstrument,
     
   });
-  console.log(222)
+  console.log(222, )
+  console.log(process.env.PORT)
+  console.log(444)
   // app.enableCors({
   //   origin: [
   //     'https://quickstart-25b84c4b.myshopify.com', // 店铺默认域名
@@ -22,8 +24,8 @@ async function bootstrap() {
   //   methods: ['GET', 'POST', 'OPTIONS'],
   //   allowedHeaders: ['Content-Type'],s
   // });
+
   app.setGlobalPrefix('api');
   await app.listen(process.env.PORT ?? 3000);
 }
-console.log(333)
 await bootstrap();
