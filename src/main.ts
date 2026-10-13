@@ -7,13 +7,14 @@ import { existsSync } from 'node:fs';
 if (existsSync('.env')) {
   process.loadEnvFile();
 }
-console.log('test 111')
 
 async function bootstrap() {
+  console.log(111)
   const app = await NestFactory.create(AppModule, {
     instrument: ObserveInstrument,
     
   });
+  console.log(222)
   // app.enableCors({
   //   origin: [
   //     'https://quickstart-25b84c4b.myshopify.com', // 店铺默认域名
@@ -24,4 +25,5 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
   await app.listen(process.env.PORT ?? 3000);
 }
+console.log(333)
 await bootstrap();
