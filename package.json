@@ -23,6 +23,7 @@
     "ingest": "node --experimental-strip-types --use-env-proxy script/ingest-vectors.ts"
   },
   "dependencies": {
+    "@chroma-core/chroma-cloud-qwen": "^0.1.12",
     "@chroma-core/default-embed": "^0.1.9",
     "@nestjs/common": "^12.0.1",
     "@nestjs/config": "^12.0.1",

@@ -29,17 +29,14 @@ export class SearchController {
   // 出参：{ code: 200, data: SearchResultItem[] }
   @Post()
   async create(@Body() dto: SearchDto, @Res() res: Response) {
-    const aiSearch = [true, 'true', 1, '1'].includes(dto.ai_search)
+    const aiSearch = [true, 'true', 1, '1'].includes(dto.ai_search || false)
     const data = await this.SearchService.search(dto.keyword);
-
     if (!aiSearch) {
-      return {
-        code: 200,
-        data,
-      }
+      return res.json({ code: 200, data })
+  
     }
 
-      // 开关打开：SSE 流式
+    // 开关打开：SSE 流式
     res.setHeader('Content-Type', 'text/event-stream');
     res.setHeader('Cache-Control', 'no-cache');
     res.setHeader('Connection', 'keep-alive');

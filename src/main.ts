@@ -9,14 +9,10 @@ if (existsSync('.env')) {
 }
 
 async function bootstrap() {
-  console.log(111)
   const app = await NestFactory.create(AppModule, {
     instrument: ObserveInstrument,
     
   });
-  console.log(222, )
-  console.log(process.env.PORT)
-  console.log(444)
   // app.enableCors({
   //   origin: [
   //     'https://quickstart-25b84c4b.myshopify.com', // 店铺默认域名

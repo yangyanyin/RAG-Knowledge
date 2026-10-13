@@ -16,7 +16,7 @@ export class SearchService {
 
   // 语义检索：把关键词转成向量，在 Chroma 里找最相关的几段原文
   async search(keyword: string, topK: number = 5): Promise<any> {
-    const collection = await this.chromaService.getCollection('documents')
+    const collection = await this.chromaService.getCollection('documents_qwen')
 
     const result = await collection.query({
       queryTexts: [keyword],
